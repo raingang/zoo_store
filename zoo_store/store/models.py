@@ -31,6 +31,9 @@ class Product(models.Model):
         auto_now_add=True, null=True, verbose_name='Дата создания')
     updated = models.DateTimeField(
         auto_now=True, verbose_name='Дата последнего редактирования')
+    image = models.ImageField(
+        blank=True, upload_to='products/%Y/%m/%d', verbose_name='Изображение товара')
+    available = models.BooleanField(default=True, verbose_name='Доступен')
     category = models.ForeignKey(Category, null=True, verbose_name='Категория')
 
     class Meta:

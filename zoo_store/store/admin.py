@@ -15,8 +15,8 @@ class ProductAdmin(admin.ModelAdmin):
     Модель отображения товара в админке
     '''
     list_display = ['name', 'slug', 'price', 'copies',
-                    'discount', 'created', 'updated', 'category']
-    list_filter = ['category', 'created', 'updated']
+                    'discount', 'created', 'updated', 'category', 'available']
+    list_filter = ['category', 'created', 'updated', 'available']
     list_editable = ['price', 'copies', 'discount']
     prepopulated_fields = {'slug': ('name', )}
 
