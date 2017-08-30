@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+{% block content %}
+<div class = 'b-products'>
+{% for product in products %}
+
+<div class = 'b-product'>
+        <div class = 'b-product__image'>
+        <img class = 'b-image' src = '{{product.image.url}}' alt = 'product-image' height = '150'>
+        </div>
+		<div class = 'b-product__name'>
+			<a class = 'b-link' href = '{{ product.get_absolute_url }}'> {{product.name}} </a>
+		</div>
+		<div class = 'b-product__price'>
+			{{product.price}}
+		</div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

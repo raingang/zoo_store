@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  {% block head %}
+
+  {% endblock %}
+</head>
+
+<body class = 'b-page'>
+<div class = 'b-page__wrapper'>
+<div class = 'b-header'>
+<div class = 'b-logo'>
+<div class = 'b-logo__logo'>
+<span>ZooStore </span>
+</div>
+<div class = 'b-logo__slogan'>
+От котов для китов
+</div>
+</div>
+</div>
+<div class = 'b-row row'>
+<ul class = 'b-nav col-2'>
+{% for category in categories %}
+
+  <li class = 'b-nav__item'>
+    <a href = '{{ category.get_absolute_url }}' class = 'b-nav__link b-link'>
+      {{ category.name }}
+    </a>
+  </li>
+
+{% endfor %}
+</ul>
+<div class = 'col-1'>
+</div>
+<div class = 'b-content col-9'>
+{% block content %}
+{% endblock %}
+</div>
+</div>
+</div>
+</body>
+</html>

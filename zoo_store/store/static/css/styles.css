@@ -1,0 +1,58 @@
+.b-page{
+	padding: 0px;
+	margin: 0px;
+}
+.b-page__wrapper{
+	width: 90%;
+	margin: 0 auto;
+	
+}
+.b-link:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.b-link{
+    text-decoration: none;
+}
+.b-nav{
+	padding: 0px;
+	margin: 0px;
+}
+.b-nav__item{
+	list-style: none;
+	width: 200px;
+	padding: 10px 20px;
+	border-bottom: 1px solid #e8e8e8;
+}
+.b-products{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.b-product{
+	padding: 10px 0px;
+	text-align: center;
+	width: 250px;
+	margin: 20px 10px;
+	background-color: #F7F7F7;
+}
+.b-product__image{
+	margin: 0 auto;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 100%;
+}
+.b-logo__logo{
+	font-size: 36px;
+	color: #CC3300;
+}
+.b-logo__slogan{
+	font-size: 15px;
+	color: grey;
+}
+.b-image{
+	position: relative;
+	left: -25%;
+}
