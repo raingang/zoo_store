@@ -8,3 +8,9 @@
 {{product.copies}}<br>
 {{product.created}}<br>
 {{product.available}}<br>
+
+<form action="{% url "cart:CartAdd" product.id %}" method="post">
+    {{ cart_product_form }}
+    {% csrf_token %}
+    <input type="submit" value="Добавить в корзину">
+</form>

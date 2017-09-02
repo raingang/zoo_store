@@ -19,7 +19,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('store.urls', namespace='store'))
+    url(r'^', include('store.urls', namespace='store')),
+    url(r'^cart/', include('cart.urls', namespace='cart')),
 ]
 
 urlpatterns += [

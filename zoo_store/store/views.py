@@ -1,6 +1,8 @@
 from django.views import generic
 from .models import Category, Product
 from django.shortcuts import get_object_or_404, render
+from cart.forms import CartAddProductForm
+
 
 def product_list(request, category_slug=None):
     category = None
@@ -15,8 +17,11 @@ def product_list(request, category_slug=None):
         'products': products
     })
 
+
 def product_detail(request, product_slug):
-	product = get_object_or_404(Product, slug=product_slug, available=True)
-	return render(request, 'store/product_detail.html', {
-		'product': product
-		})
+    product = get_object_or_404(Product, slug=product_slug, available=True)
+    cart_product_form = CartAddProductForm()
+    return render(request, 'store/product_detail.html', {
+        'product': product,
+        'cart_product_form' : cart_product_form
+        })

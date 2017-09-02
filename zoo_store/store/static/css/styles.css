@@ -56,3 +56,8 @@
 	position: relative;
 	left: -25%;
 }
+
+.b-cart-table__th{
+	text-align: center;	
+	color: #FF3300;
+}
