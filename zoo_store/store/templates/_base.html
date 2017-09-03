@@ -19,14 +19,26 @@
 
 <body class = 'b-page'>
 <div class = 'b-page__wrapper'>
-<div class = 'b-header'>
-<div class = 'b-logo'>
+<div class = 'b-header row'>
+<div class = 'b-logo col-6'>
 <div class = 'b-logo__logo'>
 <a href = '/'>ZooStore </a>
 </div>
 <div class = 'b-logo__slogan'>
 От котов для китов
 </div>
+</div>
+<div class = 'b-header__cart'>
+{% with total_items=cart|length %}
+{% if total_items > 0 %}
+Ваша корзина:
+<a href="{% url "cart:CartDetail" %}">
+    {{ total_items }} тов. {{ cart.get_total_price }} руб.
+</a>
+{% else %}
+Ваша корзина пуста
+{% endif %}
+{% endwith %}
 </div>
 </div>
 <div class = 'b-row row'>
